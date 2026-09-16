@@ -58,7 +58,7 @@ export default function Home() {
 
     <main className="content">
       <section className="hero-card">
-        <div className="hero-image"><img src="/manus-storage/ale-cruz-roleta_06edee59.jpg" alt="Alê Cruz na roleta"/><div className="hero-overlay"/></div>
+        <div className="hero-image"><img src={`${import.meta.env.BASE_URL}ale-cruz-roleta.jpg`} alt="Alê Cruz na roleta"/><div className="hero-overlay"/></div>
         <div className="hero-copy" aria-hidden="true" />
         <div className="hero-name"><span>por</span><strong>Alê Cruz</strong></div>
       </section>
