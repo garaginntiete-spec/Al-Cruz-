@@ -1,0 +1,17 @@
+{
+  "name": "Planilha Alê Cruz",
+  "short_name": "Alê Cruz",
+  "description": "Planilha diária de gerenciamento com juros compostos",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#11060f",
+  "theme_color": "#ed2584",
+  "icons": [
+    {
+      "src": "/manus-storage/ale-cruz-roleta_06edee59.jpg",
+      "sizes": "640x640",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
