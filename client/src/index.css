@@ -98,3 +98,27 @@ button { cursor: pointer; }
 .hero-name strong { color: #fff8fc; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(27px, 4vw, 44px); font-style: italic; line-height: .95; letter-spacing: -.04em; }
 .hero-name strong::after { content: ''; display: block; width: 54px; height: 3px; margin: 8px 2px 0 auto; border-radius: 99px; background: linear-gradient(90deg, #ff3ca4, #ffb9df); box-shadow: 0 0 12px rgba(255, 55, 169, .7); }
 @media (max-width: 650px) { .hero-name { right: 18px; bottom: 22px; } .hero-name strong { font-size: 30px; } }
+
+/* Campo de porcentagem livre e layout responsivo */
+.custom-rate { width: 100%; border: 1px solid rgba(255, 153, 219, .28); border-radius: 14px; padding: 16px; background: rgba(35, 8, 30, .85); }
+.custom-rate label { display: block; color: #ff70bb; font-size: 10px; font-weight: 900; letter-spacing: .18em; margin-bottom: 8px; }
+.rate-input-wrap { height: 62px; display: flex; align-items: center; border: 2px solid #ff3da4; border-radius: 12px; padding: 0 16px; background: rgba(12, 2, 11, .7); box-shadow: 0 0 24px rgba(255, 28, 154, .14); }
+.rate-input-wrap input { flex: 1; min-width: 0; border: 0; outline: 0; color: #fff3fb; background: transparent; font-size: 24px; font-weight: 900; }
+.rate-input-wrap input::placeholder { color: #8d5b7c; font-size: 14px; font-weight: 500; }
+.rate-input-wrap span { color: #ff70bb; font-size: 22px; font-weight: 900; }
+.custom-rate small { display: block; margin-top: 9px; color: #c692b5; font-size: 11px; }
+.rate-grid { display: block; margin: 24px 0 25px; }
+.table-card { overflow-x: auto; }
+.table-head, .table-row { min-width: 560px; }
+@media (max-width: 650px) {
+  .content { width: calc(100% - 20px); }
+  .hero-card { border-radius: 18px; }
+  .control-card { padding: 20px 14px; }
+  .section-heading { gap: 12px; }
+  .subheading { font-size: 18px; }
+  .muted { line-height: 1.45; }
+  .rate-input-wrap { height: 58px; }
+  .rate-input-wrap input { font-size: 21px; }
+  .rate-input-wrap input::placeholder { font-size: 12px; }
+  .table-card { border-radius: 16px; }
+}
