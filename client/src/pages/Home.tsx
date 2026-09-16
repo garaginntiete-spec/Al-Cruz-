@@ -23,18 +23,20 @@ export default function Home() {
   const [rate, setRate] = useState(5);
   const [customRate, setCustomRate] = useState("5");
   const [initial, setInitial] = useState("100,00");
+  const [currentBank, setCurrentBank] = useState("100,00");
   const [menuOpen, setMenuOpen] = useState(false);
   const numericInitial = Number(initial.replace(/\\./g, "").replace(",", ".")) || 0;
-  const stopLossValue = numericInitial * rate / 100;
-  const protectedBank = Math.max(0, numericInitial - stopLossValue);
+  const numericCurrentBank = Number(currentBank.replace(/\./g, "").replace(",", ".")) || 0;
+  const stopLossValue = numericCurrentBank * rate / 100;
+  const protectedBank = Math.max(0, numericCurrentBank - stopLossValue);
   const rows = useMemo(() => Array.from({ length: 31 }, (_, i) => {
     const current = numericInitial * Math.pow(1 + rate / 100, i);
     const gain = current * rate / 100;
     return { day: i + 1, current, gain, total: current + gain };
   }), [numericInitial, rate]);
 
-  const restore = () => { setRate(5); setCustomRate("5"); setInitial("100,00"); };
-  const save = () => localStorage.setItem("ale-cruz-planilha", JSON.stringify({ rate, customRate, initial }));
+  const restore = () => { setRate(5); setCustomRate("5"); setInitial("100,00"); setCurrentBank("100,00"); };
+  const save = () => localStorage.setItem("ale-cruz-planilha", JSON.stringify({ rate, customRate, initial, currentBank }));
   const exportCsv = () => {
     const csv = ["Dia;Banca atual;Valor a fazer;Total", ...rows.map(r => `${r.day};${r.current.toFixed(2).replace(".",",")};${r.gain.toFixed(2).replace(".",",")};${r.total.toFixed(2).replace(".",",")}`)].join("\\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
@@ -65,8 +67,9 @@ export default function Home() {
       <section className="control-card">
         <div className="section-heading"><div><p className="eyebrow">JUROS PARA TODOS OS DIAS</p><p className="subheading">Escolha sua meta</p><p className="muted">Altera a tabela inteira automaticamente</p></div><Sparkles className="sparkle" size={24}/></div>
         <div className="rate-grid">{rates.map(item => <button key={item} className={`rate-button ${rate === item && customRate === String(item) ? "selected" : ""}`} onClick={() => { setRate(item); setCustomRate(String(item)); }}>{item}%</button>)}<div className={`custom-rate ${!rates.includes(rate) || customRate !== String(rate) ? "active" : ""}`}><input value={customRate} onChange={e => { const value = e.target.value.replace(/[^0-9,]/g, ""); setCustomRate(value); const parsed = Number(value.replace(",", ".")); if (Number.isFinite(parsed) && parsed >= 0 && parsed <= 100) setRate(parsed); }} aria-label="Porcentagem personalizada" inputMode="decimal"/><span>%</span><small>personalizada</small></div></div>
-        <div className="bank-input"><label>BANCA INICIAL</label><div className="input-wrap"><span>R$</span><input value={initial} onChange={e => setInitial(e.target.value.replace(/[^0-9,]/g, ""))} aria-label="Banca inicial"/><span className="input-caret">●</span></div><small>Digite o valor uma única vez. A banca de cada dia será calculada automaticamente.</small></div>
-        <div className="stop-loss-card"><div><p className="eyebrow">PROTEÇÃO DA BANCA</p><h3>Stop loss</h3><p className="muted">Limite calculado com {rate.toFixed(2).replace(".", ",")}% da banca inicial</p></div><div className="stop-loss-values"><div><span>Perda máxima</span><strong>{money(stopLossValue)}</strong></div><div><span>Banca protegida</span><strong>{money(protectedBank)}</strong></div></div></div>
+        <div className="bank-input"><label>BANCA INICIAL</label><div className="input-wrap"><span>R$</span><input value={initial} onChange={e => setInitial(e.target.value.replace(/[^0-9,]/g, ""))} aria-label="Banca inicial"/><span className="input-caret">●</span></div><small>Digite o valor inicial para projetar a tabela de gerenciamento.</small></div>
+        <div className="bank-input current-bank-input"><label>BANCA ATUAL</label><div className="input-wrap"><span>R$</span><input value={currentBank} onChange={e => setCurrentBank(e.target.value.replace(/[^0-9,]/g, ""))} aria-label="Banca atual" inputMode="decimal"/><span className="input-caret">●</span></div><small>Informe sua banca neste momento para calcular o stop loss.</small></div>
+        <div className="stop-loss-card"><div><p className="eyebrow">PROTEÇÃO DA BANCA</p><h3>Stop loss</h3><p className="muted">Limite de perda: {rate.toFixed(2).replace(".", ",")}% da banca atual</p></div><div className="stop-loss-values"><div><span>Perda máxima</span><strong>{money(stopLossValue)}</strong></div><div><span>Banca protegida</span><strong>{money(protectedBank)}</strong></div></div></div>
       </section>
 
       <section className="table-card"><div className="table-head"><span>DIA</span><span>BANCA ATUAL</span><span>VALOR A FAZER</span><span>TOTAL</span></div>{rows.map(row => <div className="table-row" key={row.day}><strong>{row.day}</strong><span className="current-value">{money(row.current)}</span><span className="gain-value">{money(row.gain)}<small>{rate.toFixed(2)}%</small></span><strong className="total-value">{money(row.total)}</strong></div>)}</section>
