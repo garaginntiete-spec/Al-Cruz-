@@ -31,7 +31,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          VITE_BASE_PATH: /planilha-ale-cruz/
+          VITE_BASE_PATH: /Al-Cruz-/
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
