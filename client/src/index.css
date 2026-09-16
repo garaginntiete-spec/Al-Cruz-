@@ -122,3 +122,47 @@ button { cursor: pointer; }
   .rate-input-wrap input::placeholder { font-size: 12px; }
   .table-card { border-radius: 16px; }
 }
+
+/* Ajuste mobile: tudo visível sem arrastar para os lados */
+@media (max-width: 650px) {
+  .content { width: calc(100% - 16px); padding: 8px 0 24px; }
+  .topbar { height: 62px; }
+  .hero-card { min-height: 220px; margin-bottom: 34px; }
+  .hero-name { right: 14px; bottom: 16px; }
+  .hero-name strong { font-size: 25px; }
+  .under-hero-bar { margin: -26px 0 8px 14px; gap: 5px; }
+  .hero-brand-line span { font-size: 7px; }
+  .hero-brand-line small { font-size: 9px; }
+  .under-hero-bar .social-pill { padding: 5px 6px; font-size: 8px; }
+  .control-card { margin-top: 10px; padding: 14px 10px; border-radius: 16px; }
+  .section-heading { gap: 6px; }
+  .eyebrow { font-size: 8px; letter-spacing: .16em; margin-bottom: 5px; }
+  .subheading { font-size: 16px; margin-top: 2px; }
+  .section-heading .muted { font-size: 10px; margin-top: 3px; }
+  .sparkle { width: 18px; height: 18px; }
+  .rate-grid { margin: 12px 0 14px; }
+  .custom-rate { padding: 10px; border-radius: 10px; }
+  .custom-rate label { font-size: 8px; margin-bottom: 5px; }
+  .rate-input-wrap { height: 43px; padding: 0 10px; border-width: 1px; }
+  .rate-input-wrap input { font-size: 19px; }
+  .rate-input-wrap input::placeholder { font-size: 10px; }
+  .rate-input-wrap span { font-size: 18px; }
+  .custom-rate small, .bank-input small { font-size: 9px; margin-top: 5px; }
+  .bank-input label { font-size: 8px; margin-bottom: 4px; }
+  .input-wrap { height: 43px; padding: 0 10px; }
+  .input-wrap input { font-size: 16px; }
+  .current-bank-input { margin-top: 8px; }
+  .stop-loss-card { margin-top: 10px; padding: 10px; }
+  .stop-loss-card h3 { font-size: 16px; margin: 2px 0; }
+  .stop-loss-values { gap: 8px; }
+  .stop-loss-values span { font-size: 9px; }
+  .stop-loss-values strong { font-size: 14px; }
+  .table-card { margin-top: 10px; overflow: hidden; }
+  .table-head, .table-row { min-width: 0; grid-template-columns: .25fr 1.08fr 1fr .95fr; gap: 3px; padding-left: 7px; padding-right: 7px; }
+  .table-head { padding-top: 10px; padding-bottom: 10px; font-size: 6px; letter-spacing: .03em; }
+  .table-row { padding-top: 8px; padding-bottom: 8px; font-size: 9px; }
+  .current-value { padding: 7px 3px; border-radius: 6px; }
+  .gain-value { padding: 6px 3px; border-radius: 6px; }
+  .gain-value small { font-size: 6px; }
+  .total-value { font-size: 9px; }
+}
