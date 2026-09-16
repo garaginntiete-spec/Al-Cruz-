@@ -8,17 +8,7 @@ import Home from "./pages/Home";
 
 
 function Router() {
-  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
-  return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      {basePath !== "/" && <Route path={basePath} component={Home} />}
-      {basePath !== "/" && <Route path={`${basePath}/`} component={Home} />}
-      <Route path={"/404"} component={NotFound} />
-      {/* Fallback: a planilha deve abrir mesmo quando o Pages acrescentar o caminho base. */}
-      <Route component={Home} />
-    </Switch>
-  );
+  return <Home />;
 }
 
 // NOTE: About Theme
