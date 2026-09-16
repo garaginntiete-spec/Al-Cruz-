@@ -15,8 +15,8 @@ function Router() {
       {basePath !== "/" && <Route path={basePath} component={Home} />}
       {basePath !== "/" && <Route path={`${basePath}/`} component={Home} />}
       <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
+      {/* Fallback: a planilha deve abrir mesmo quando o Pages acrescentar o caminho base. */}
+      <Route component={Home} />
     </Switch>
   );
 }
