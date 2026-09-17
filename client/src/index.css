@@ -279,3 +279,50 @@ footer { color: #a8757d; } footer strong { color: #f4a0a6; } footer span { color
   .table-row { font-size: 16px; }
   .current-value, .gain-value { font-size: 15px; }
 }
+
+/* Proporção final: topo compacto e tabela mais legível */
+@media (max-width: 650px) {
+  .topbar { height: 50px; }
+  .brand-icon { width: 30px; height: 30px; border-radius: 9px; font-size: 11px; }
+  .brand-mark { gap: 8px; }
+  .brand-mark p { font-size: 7px; }
+  .brand-mark strong { font-size: 11px; }
+  .top-actions { gap: 4px; }
+  .icon-button { width: 30px; height: 30px; border-radius: 8px; }
+  .content { padding-top: 8px; }
+  .hero-card { min-height: 190px; margin-bottom: 34px; border-radius: 16px; }
+  .hero-copy { padding: 18px 16px 54px; }
+  .hero-copy h1 { font-size: 29px; }
+  .hero-name { right: 12px; bottom: 12px; }
+  .hero-name strong { font-size: 21px; }
+  .under-hero-bar { margin: -25px 0 6px 12px; gap: 4px; }
+  .hero-brand-line span { font-size: 6px; }
+  .hero-brand-line small { font-size: 8px; }
+  .under-hero-bar .social-pill { padding: 4px 5px; font-size: 7px; }
+  .control-card { margin-top: 8px; padding: 11px 9px; border-radius: 14px; }
+  .section-heading .eyebrow { font-size: 7px; margin-bottom: 2px; }
+  .section-heading .subheading { font-size: 15px; }
+  .section-heading .muted { font-size: 9px; }
+  .sparkle { width: 16px; height: 16px; }
+  .rate-grid { margin: 9px 0 10px; }
+  .custom-rate { padding: 7px; }
+  .custom-rate label, .bank-input label { font-size: 7px; margin-bottom: 3px; }
+  .rate-input-wrap, .input-wrap { height: 38px; }
+  .rate-input-wrap input { font-size: 20px; }
+  .input-wrap input { font-size: 17px; }
+  .custom-rate small, .bank-input small { font-size: 8px; margin-top: 3px; }
+  .current-bank-input { margin-top: 5px; }
+  .stop-loss-card { margin-top: 6px; padding: 7px; }
+  .stop-loss-card h3 { font-size: 15px; }
+  .stop-loss-values strong { font-size: 14px; }
+  .stop-loss-values span { font-size: 8px; }
+  .table-card { margin-top: 8px; border-radius: 14px; }
+  .table-head, .table-row { grid-template-columns: .24fr 1.03fr 1.01fr .98fr; gap: 2px; }
+  .table-head { padding: 10px 5px; font-size: 7px; }
+  .table-row { padding: 11px 5px; font-size: 13px; }
+  .table-row > strong:first-child { font-size: 14px; }
+  .current-value, .gain-value { padding: 9px 2px; font-size: 12px; }
+  .total-value { font-size: 13px; }
+  .gain-value small { font-size: 7px; }
+  .formula { font-size: 9px; margin: 12px 0; }
+}
