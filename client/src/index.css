@@ -195,3 +195,53 @@ button { cursor: pointer; }
   .current-value, .gain-value { padding: 7px 3px; }
   .gain-value small { font-size: 6px; }
 }
+
+/* Paleta da referência: preto, vinho, bordô, coral, rosa blush e branco */
+:root { color: #fff8f7; background: #100b0c; }
+body { background: radial-gradient(circle at 50% -10%, #6b2a35 0%, #2a1118 42%, #0d0a0b 100%); }
+.app-shell { background: radial-gradient(circle at 10% 18%, rgba(242, 111, 124, .14), transparent 30%), linear-gradient(145deg, #120c0d, #3a1720 52%, #0b090a); }
+.topbar { border-bottom-color: rgba(244, 160, 166, .2); background: rgba(18, 11, 13, .82); }
+.brand-icon { border-color: #f26f7c; background: linear-gradient(145deg, #f26f7c, #762d3b); box-shadow: 0 0 22px rgba(242, 111, 124, .32); }
+.brand-mark p, .hero-brand-line span { color: #f4a0a6; }
+.icon-button { border-color: rgba(244, 160, 166, .26); background: #32151d; color: #ffe9e7; }
+.icon-button:hover { border-color: #f26f7c; }
+.icon-button.accent { background: #e85f70; box-shadow: 0 8px 18px rgba(232, 95, 112, .28); }
+.menu-popover { border-color: rgba(244, 160, 166, .3); background: #2a1118; }
+.menu-popover button:hover, .menu-popover a:hover { background: #572330; }
+.hero-card { border-color: rgba(244, 160, 166, .32); background: #3b1720; }
+.hero-overlay { background: linear-gradient(90deg, #100a0b 0%, rgba(48, 18, 25, .86) 38%, rgba(72, 27, 35, .3) 75%, rgba(12, 8, 9, .7)); }
+.eyebrow, .bank-input label { color: #f26f7c; }
+.hero-copy h1 em, .subheading, .sparkle { color: #f26f7c; }
+.subtitle { color: #ffe9e7; }
+.subtitle span { color: #f4a0a6; }
+.social-pill.instagram { background: linear-gradient(135deg, #f26f7c, #a94352); border-color: rgba(255, 222, 220, .4); }
+.social-pill.telegram { background: #733342; border-color: rgba(244, 160, 166, .4); }
+.social-pill.play-now { background: linear-gradient(135deg, #f4a0a6, #db6573); border-color: rgba(255, 235, 232, .55); color: #2a1118; }
+.social-pill:hover { background: #f26f7c; box-shadow: 0 7px 18px rgba(242, 111, 124, .3); }
+.casino-chip { background: #e85f70; border-color: #ffe9e7; }
+.casino-chip span { color: #f4a0a6; background: #170d10; }
+.casino-chip.black { background: #171112; }
+.casino-chip.white { background: #fff1ef; }
+.casino-chip.white span { color: #e85f70; background: #4a1b25; }
+.control-card, .table-card { border-color: rgba(244, 160, 166, .24); background: linear-gradient(135deg, rgba(74, 28, 38, .86), rgba(28, 14, 17, .94)); }
+.muted { color: #d79a9f; }
+.custom-rate { border-color: rgba(244, 160, 166, .34); background: rgba(43, 17, 24, .88); }
+.rate-input-wrap { border-color: #f26f7c; background: rgba(16, 10, 11, .72); box-shadow: 0 0 24px rgba(242, 111, 124, .14); }
+.rate-input-wrap input, .input-wrap input { color: #fff8f7; }
+.rate-input-wrap span { color: #f4a0a6; }
+.custom-rate small, .bank-input small { color: #d79a9f; }
+.input-wrap { border-color: #d85c6d; background: rgba(16, 10, 11, .7); box-shadow: inset 0 0 24px rgba(242, 111, 124, .1); }
+.input-wrap span { color: #b87983; }
+.input-caret { color: #f26f7c !important; }
+.stop-loss-card { border-color: rgba(244, 160, 166, .25); background: rgba(75, 29, 40, .56); }
+.table-head { color: #d79a9f; background: rgba(242, 111, 124, .07); }
+.table-row { border-top-color: rgba(244, 160, 166, .12); }
+.table-row > strong:first-child, .gain-value { color: #f26f7c; }
+.current-value { background: #241117; }
+.gain-value { background: rgba(242, 111, 124, .1); }
+.gain-value small { color: #b87983; }
+.total-value { color: #fff4f2; }
+.formula { color: #d79a9f; }
+footer { color: #a8757d; } footer strong { color: #f4a0a6; } footer span { color: #f26f7c; }
+::selection { background: #d85c6d; color: white; }
+::-webkit-scrollbar-track { background: #160d0f; } ::-webkit-scrollbar-thumb { background: #783644; }
