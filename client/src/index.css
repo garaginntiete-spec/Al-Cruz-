@@ -326,3 +326,9 @@ footer { color: #a8757d; } footer strong { color: #f4a0a6; } footer span { color
   .gain-value small { font-size: 7px; }
   .formula { font-size: 9px; margin: 12px 0; }
 }
+
+/* Mostrar a cabeça inteira na capa sem aumentar sua altura */
+.hero-image img { object-position: 62% 24%; }
+@media (max-width: 650px) {
+  .hero-image img { object-position: 62% 18%; }
+}
