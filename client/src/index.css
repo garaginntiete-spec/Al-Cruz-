@@ -245,3 +245,37 @@ body { background: radial-gradient(circle at 50% -10%, #6b2a35 0%, #2a1118 42%, 
 footer { color: #a8757d; } footer strong { color: #f4a0a6; } footer span { color: #f26f7c; }
 ::selection { background: #d85c6d; color: white; }
 ::-webkit-scrollbar-track { background: #160d0f; } ::-webkit-scrollbar-thumb { background: #783644; }
+
+/* Tipografia maior, mantendo tudo dentro da tela */
+.table-head, .table-row { min-width: 0; }
+.table-row { font-size: 15px; }
+.table-head { font-size: 10px; }
+.current-value { font-size: 14px; }
+.gain-value { font-size: 14px; }
+.total-value { font-size: 15px; }
+.gain-value small { font-size: 9px; }
+.rate-input-wrap input { font-size: 26px; }
+.input-wrap input { font-size: 21px; }
+.stop-loss-values strong { font-size: 20px; }
+@media (max-width: 650px) {
+  .control-card { padding: 16px 10px; }
+  .subheading { font-size: 19px; }
+  .muted { font-size: 11px; }
+  .custom-rate label, .bank-input label { font-size: 9px; }
+  .rate-input-wrap { height: 48px; }
+  .rate-input-wrap input { font-size: 23px; }
+  .input-wrap { height: 48px; }
+  .input-wrap input { font-size: 19px; }
+  .stop-loss-card h3 { font-size: 18px; }
+  .stop-loss-values strong { font-size: 16px; }
+  .table-head, .table-row { grid-template-columns: .24fr 1.04fr 1fr .98fr; gap: 2px; }
+  .table-head { padding: 11px 5px; font-size: 7px; letter-spacing: 0; }
+  .table-row { padding: 9px 5px; font-size: 11px; }
+  .current-value, .gain-value { padding: 8px 2px; font-size: 10px; }
+  .total-value { font-size: 11px; }
+  .gain-value small { font-size: 7px; }
+}
+@media (min-width: 651px) {
+  .table-row { font-size: 16px; }
+  .current-value, .gain-value { font-size: 15px; }
+}
